@@ -13,7 +13,7 @@ body {
     font-weight: 400;
     color: #040303;
     background-color: #fff;
-    background-image: url('./bg-new-new.jpg');
+    background-image: url('src/images/bg-new-new.jpg');
     background-size: 100%;
     background-repeat: no-repeat; 
   }

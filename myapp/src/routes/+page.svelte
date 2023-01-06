@@ -9,18 +9,18 @@
     import NextButton from "./rightnavbutton.svelte";
     import {slide, fade} from 'svelte/transition';
     import {elasticInOut} from 'svelte/easing';
-    import roadsideImage from './roadside2.png';
+    import roadsideImage from "./roadside3.png";
     import welcome_fallback from './svelte-welcome.png';
     import vehicleService from './service.png';
     import healthReport from './reportimage.png';
-    import HealthServicesButton from './healthservice.svelte';
-	  import HealthReport from './healthreport.svelte';
-	  import Roadside from './roadsidebutton.svelte';
-    import CrashDetect from './crashdetect.svelte';
-    import VoiceAssistant from './voiceassistant.svelte';
+    // import HealthServicesButton from './healthservice.svelte';
+	  // import HealthReport from './healthreport.svelte';
+	  // import Roadside from './roadsidebutton.svelte';
+    // import CrashDetect from './crashdetect.svelte';
+    // import VoiceAssistant from './voiceassistant.svelte';
     import { createEventDispatcher, onDestroy } from 'svelte';
-    import { onMount } from "svelte";
-	import { null_to_empty, set_input_type } from 'svelte/internal';
+    // import { onMount } from "svelte";
+	  // import { null_to_empty, set_input_type } from 'svelte/internal';
     let progress = 0;
 
     let currentSlide = 0;
