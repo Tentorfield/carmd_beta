@@ -29,31 +29,40 @@
 
     let slides = [
       {
-        image: 'src/images/firstimage.png',
+        image: './firstimage.png',
         // ResizeObserverSize,
         caption: 'Me and My Car'
       },
       {
-        image: 'src/images/secondimage.png',
+        image: './secondimage.png',
         // ResizeObserverSize,
         caption: 'Free Vehicle Health Report'
       },
       {
-        image: 'src/images/thirdimage.png',
+        image: './thirdimage.png',
         // ResizeObserverSize,
         caption: 'Roadside Assistance'
       },
       {
-        image: 'src/images/fourthimage.png',
+        image: './fourthimage.png',
         // ResizeObserverSize,
         caption: 'Car Crash Detection'
       },
       {
-        image: 'src/images/fifthimage.png',
+        image: './fifthimage.png',
         // ResizeObserverSize,
         caption: 'Car Maintenance Service'
       }
     ];
+    // let slide = 0;
+    
+  //   let slides = [
+  //   './firstimage.png',
+  //   './secondimage.png',
+  //   './thirdimage.png',
+  //   './fourthimage.png',
+  //   './fifthimage.png'
+  // ];
 
     function startTimer() {
       timer = setInterval(() => {
@@ -71,25 +80,25 @@
   startTimer();
   
     function nextSlide() {
-      if (currentSlide  == 4){
-        currentSlide = 0;
-        progress = 0;
+      if (counter  == 4){
+        slide = 0;
+        counter = 0;
       }
       else{
-        currentSlide = (currentSlide + 1) % slides.length;
+        slide = (slide + 1) % slides.length;
         advanceProgress();
         counter += 1;
       }
     }
   
     function prevSlide() {
-      if (currentSlide != 0){
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      if (counter != 0){
+        slide = 4;
         decreaseProgress();
         counter -= 1;
       }
       else{
-        currentSlide = slides.length - 1;
+        slide = (slide - 1) % slides.length;
       }
     }
 
@@ -275,20 +284,33 @@ let time = 0;
 
     </div>
 
+    <!-- <div class="carousel">
+      <div class="carousel-slides" style="transform: translateX({slide * -100}%)">
+        {#each slides as slide}
+          <div class="carousel-slide"><img src={slide} /></div>
+        {/each}
+      </div>
+      <div class="carousel-controls">
+        {#each slides as slide, i}
+          <div class="carousel-control {i === currentSlide ? 'active' : ''}" on:click={() => goToSlide(i)}>{i + 1}</div>
+        {/each}
+      </div>
+    </div> -->
+
       <div class="progress-bar">
 
         <div class="progress-bar-fill" style={`width: ${progress}%`}></div>
         
       </div>
-      {#if currentSlide == 0}
+      {#if slide == 0}
       <h3> 00 01</h3>
-      {:else if currentSlide == 1}
+      {:else if slide == 1}
       <h3> 01 02</h3>
-      {:else if currentSlide == 2}
+      {:else if slide == 2}
       <h3> 02 03</h3>
-      {:else if currentSlide == 3}
+      {:else if slide == 3}
       <h3> 03 04 </h3>
-      {:else if currentSlide == 4} 
+      {:else if slide == 4} 
       <h3> 04 04 </h3>
       {/if}
 
@@ -514,7 +536,52 @@ let time = 0;
 
 
 <style>
-
+  /* .carousel {
+    position: relative;
+    overflow: hidden;
+    width: 600px;
+    height: 400px;
+  }
+  .carousel-slides {
+    display: flex;
+    transition: transform 1s;
+  }
+  .carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+  }
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .carousel-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .carousel-control {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    margin: 0 10px;
+  }
+  .carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .carousel-control.active {
+    background-color: #000;
+  } */
+  
   li {
     display: block;
     line-height: 3;
@@ -622,7 +689,7 @@ let time = 0;
   }
 
   .roadside-button button{
-        background-image: url('src/images/tow-truck-svgrepo-com.png');
+        background-image: url('./tow-truck-svgrepo-com.png');
         background-repeat: no-repeat;
         background-position: center;
         margin-left: -3.9em;
@@ -641,7 +708,7 @@ let time = 0;
     }
 
     .healthservice-button button{
-      background-image: url('src/images/tool-svgrepo-com.png');
+        background-image: url('./tool-svgrepo-com.png');
         background-repeat: no-repeat;
         background-position: center;
         width: 67px;
@@ -661,7 +728,7 @@ let time = 0;
 
     .healthreport-button button{
         position: relative;
-        background-image: url('src/images/healthimage.png');
+        background-image: url('./healthimage.png');
         background-repeat: no-repeat;
         background-position: center;
         width: 67px;
@@ -681,7 +748,7 @@ let time = 0;
 
     .crashdetection-button button{
         position: relative;
-        background-image: url('src/images/car-crash-svgrepo-com (1).png');
+        background-image: url('./car-crash-svgrepo-com (1).png');
         background-repeat: no-repeat;
         background-position: center;
         width: 67px;
@@ -702,7 +769,7 @@ let time = 0;
 
     .voiceassistant-button button{
         position: relative;
-        background-image: url('src/images/microphone-svgrepo-com.png');
+        background-image: url('./microphone-svgrepo-com.png');
         background-repeat: no-repeat;
         background-position: center;
         width: 67px;
@@ -719,7 +786,7 @@ let time = 0;
 
     .triplog-button button{
         position: relative;
-        background-image: url('src/images/triplog.png');
+        background-image: url('./triplog.png');
         background-repeat: no-repeat;
         background-position: center;
         width: 67px;
@@ -739,7 +806,7 @@ let time = 0;
 
     .savedlocation-button button{
         position: relative;
-        background-image: url('src/images/location.png');
+        background-image: url('./location.png');
         background-repeat: no-repeat;
         background-position: center;
         width: 67px;
@@ -759,7 +826,7 @@ let time = 0;
 
     .insurancelicense-button button{
         position: relative;
-        background-image: url('src/images/insurancelicense.png');
+        background-image: url('insurancelicense.png');
         background-repeat: no-repeat;
         background-position: center;
         width: 67px;
@@ -774,7 +841,7 @@ let time = 0;
 
     .coupons-button button{
         position: relative;
-        background-image: url('src/images/coupon-svgrepo-com.png');
+        background-image: url('./coupon-svgrepo-com.png');
         background-repeat: no-repeat;
         background-position: center;
         width: 67px;
@@ -794,7 +861,7 @@ let time = 0;
 
     .tools-button button{
         position: relative;
-        background-image: url('src/images/tools.png');
+        background-image: url('./tools.png');
         background-repeat: no-repeat;
         background-position: center;
         width: 67px;
@@ -815,7 +882,7 @@ let time = 0;
 
     .tco-button button{
         position: relative;
-        background-image: url('src/images/money-svgrepo-com (2).png');
+        background-image: url('./money-svgrepo-com (2).png');
         background-repeat: no-repeat;
         background-position: center;
         width: 67px;

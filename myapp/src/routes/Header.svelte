@@ -2,6 +2,8 @@
 
 <script>
     import './stylesheet.css';
+    import Logo from './carmdlogo.png';
+    import welcome_fallback from './svelte-welcome.png';
 </script>
 <header title="My App" class="header">
     <nav>
@@ -9,8 +11,11 @@
       <a href="/resources">Resources</a>
       <a href="/contactus">Contact Us</a>
     </nav>
-    <div class="header__left">
-      <img src='./src/images/carmdlogo.png' alt="Logo" class="header__logo">
+    <div class="Logo">
+      <picture>
+        <source srcset={Logo} type="image/png" class="container_img"/>
+        <img src={welcome_fallback} alt="Welcome" />
+      </picture>
     </div>
     <div class="header__right">
         <button class="btn btn--primary">Download</button>
@@ -68,12 +73,12 @@
     align-items: center;
   }
 
-  .header__left{
+  .Logo{
     display: flex;
     align-items: center;
   }
 
-  .header__logo {
+  .Logo img {
     position: fixed;
     top: 1.5em;
     left: 1em;
