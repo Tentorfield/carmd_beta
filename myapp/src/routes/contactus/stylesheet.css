@@ -1,0 +1,72 @@
+/* CarMD Beta style sheet */
+@font-face {
+    font-family: 'Avenir Next';
+    src: url("http://www.yoursite.com/fonts/Avenir_Next.otf"); /* File to be stored at your site */
+    }
+
+
+/* Body element */
+body {
+    position:absolute;
+    font-family: 'Avenir Next';
+    font-size: 20px;
+    font-weight: 400;
+    color: #040303;
+    background-color: #fff;
+    background-image: url('./bg-new-new.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat; 
+  }
+  
+  /* Headings */
+  h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #83B0D1;
+  }
+  
+  h2 {
+    font-size: 72px;
+    font-weight: 700;
+    color: #000000;
+  }
+  
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+  }
+  
+  /* Links */
+  a {
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #83B0D1;
+  }
+  
+  /* Button */
+  .btn {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 30px;
+    background-color: #83b0d1;
+    color: #fff;
+  }
+
+  .btn:hover {
+    background-color: #0088ff;
+  }
+  
+  /* Alert */
+  .alert {
+    padding: 0.5em 1em;
+    border: 1px solid #f00;
+    border-radius: 4px;
+    color: #f00;
+  }
