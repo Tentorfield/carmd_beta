@@ -79,29 +79,28 @@
 
   startTimer();
   
-    function nextSlide() {
-      if (counter  == 4){
-        slide = 0;
-        counter = 0;
+  function nextSlide() {
+      if (currentSlide  == 4){
+        currentSlide = 0;
+        progress = 0;
       }
       else{
-        slide = (slide + 1) % slides.length;
+        currentSlide = (currentSlide + 1) % slides.length;
         advanceProgress();
         counter += 1;
       }
     }
   
     function prevSlide() {
-      if (counter != 0){
-        slide = 4;
+      if (currentSlide != 0){
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
         decreaseProgress();
         counter -= 1;
       }
       else{
-        slide = (slide - 1) % slides.length;
+        currentSlide = slides.length - 1;
       }
     }
-
     function advanceProgress() {
         if (progress == 4){
           progress = Math.min(100, 0 + (100 / slides.length));
@@ -110,7 +109,6 @@
           progress = Math.min(100, progress + (100 / slides.length));
         }
     }
-
     function decreaseProgress() {
         if (progress == 0){
           progress = Math.min(100, 80 + (100 / slides.length));
