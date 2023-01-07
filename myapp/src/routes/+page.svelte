@@ -29,27 +29,27 @@
 
     let slides = [
       {
-        image: './firstimage.png',
+        image: 'src/images/firstimage.png',
         // ResizeObserverSize,
         caption: 'Me and My Car'
       },
       {
-        image: './secondimage.png',
+        image: 'src/images/secondimage.png',
         // ResizeObserverSize,
         caption: 'Free Vehicle Health Report'
       },
       {
-        image: './thirdimage.png',
+        image: 'src/images/thirdimage.png',
         // ResizeObserverSize,
         caption: 'Roadside Assistance'
       },
       {
-        image: './fourthimage.png',
+        image: 'src/images/fourthimage.png',
         // ResizeObserverSize,
         caption: 'Car Crash Detection'
       },
       {
-        image: './fifthimage.png',
+        image: 'src/images/fifthimage.png',
         // ResizeObserverSize,
         caption: 'Car Maintenance Service'
       }
